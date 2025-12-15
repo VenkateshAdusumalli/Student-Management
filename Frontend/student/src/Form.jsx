@@ -19,7 +19,7 @@ function Form(){
     };
 
     const handleData = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         try {
             const result = await axios.post('http://localhost:5401/students', data);
             console.log(result.data);
@@ -41,7 +41,7 @@ function Form(){
             <form action="" className='formContainer' onSubmit={handleData}>
                 <div>
                 <label htmlFor="rollno">Reg No : </label>
-                <input type="text" name="rollno" id="rollno" value={data.rollno} onChange={handleChange} />
+                <input type="text" name="rollno" id="rollno" value={data.rollno} onChange={handleChange}/>
                 </div>
                 <div>
                 <label htmlFor="name">Name : </label>
@@ -57,7 +57,7 @@ function Form(){
                 </div>
                 <div>
                 <label htmlFor="year">Year :</label>
-                <select name="year" id="year" value={data.year} onChange={handleChange}>
+                <select className="form-select" name="year" id="year" value={data.year} onChange={handleChange}>
                     <option value="">Select  the current Year(Btech)</option>
                     <option value="1st">1st</option>
                     <option value="2nd">2nd</option>

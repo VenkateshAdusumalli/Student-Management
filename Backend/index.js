@@ -17,15 +17,15 @@ mongoose
 //     res.json({ status: 'ok' });
 // });
 
-// app.get('/students', async (req, res) => {
-//     try {
-//         const students = await studentModel.find().sort({ _id: -1 });
-//         return res.json(students);
-//     } catch (err) {
-//         console.error('Error fetching students:', err);
-//         return res.status(500).json({ message: 'Failed to fetch students' });
-//     }
-// });
+app.get('/get/:id', async (req, res) => {
+    try {
+        const students = await studentModel.find({rollno :req.params.id});
+        return res.json(students);
+    } catch (err) {
+        console.error('Error fetching students:', err);
+        return res.status(500).json({ message: 'Failed to fetch students' });
+    }
+});
 
 app.post('/students', async (req, res) => {
     try {
@@ -38,6 +38,6 @@ app.post('/students', async (req, res) => {
     }
 });
 
-app.listen(5401, ()=>{
+app.listen(5401, () => {
     console.log("Server is running Succesfully");
 })

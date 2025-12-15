@@ -25,7 +25,7 @@ h1 {
   margin-bottom: 30px;
   font-weight: bold;
 }
-button {
+.formContainer button {
   padding: 10px 20px;
   background-color: #4CAF50;
   color: white;
@@ -36,8 +36,16 @@ button {
   display : flex;
   margin: auto;
 }
-input {
+.formContainer input {
   padding : 5px 10px;
   border-radius: 7px;
+  outline: none;
+  border: 2px solid #181313;
+}
 
+.form-select {
+  width: 185px;
+  padding: 5px 10px;
+  border: 2px solid #181313;
+  border-radius: 7px;
 }
